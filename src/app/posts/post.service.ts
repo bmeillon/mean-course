@@ -9,10 +9,7 @@ export class PostsService {
   private postsUpdated = new Subject<Post[]>();
 
 
-
-
   getPosts() {
-
     return [...this.posts];
   }
 

@@ -23,6 +23,7 @@ export class PostCreateComponent {
     }
 
     this.postService.addPost(form.value.title, form.value.content);
+    form.resetForm();
 
     /* const post: Post = {
       title: form.value.title,

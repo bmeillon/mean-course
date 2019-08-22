@@ -4,11 +4,12 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map} from 'rxjs/operators';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
+import { Router } from '@angular/router';
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
@@ -53,6 +54,9 @@ export class PostsService {
       this.posts.push(post);
       // After added update your posts
       this.postsUpdated.next([...this.posts]);
+
+      // Navigate to another page in this case index
+      this.router.navigate(['/']);
     });
   }
 
@@ -73,6 +77,9 @@ export class PostsService {
       updatedPosts[oldPostIndex] = post;
       this.posts = updatedPosts;
       this.postsUpdated.next([...this.posts]);
+
+      // Navigate to another page in this case index
+      this.router.navigate(['/']);
     });
   }
 }

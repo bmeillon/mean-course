@@ -14,6 +14,7 @@ import { MatInputModule,
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostsService } from './posts/post.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     PostListComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     MatInputModule,

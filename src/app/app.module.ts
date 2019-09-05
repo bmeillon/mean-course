@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [PostsService],
+  providers: [PostsService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

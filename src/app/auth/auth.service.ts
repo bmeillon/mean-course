@@ -47,6 +47,11 @@ export class AuthService {
     });
   }
 
+  logout() {
+    this.token = null;
+    this.isAuthenticated = false;
+    this.authServiceListener.next(false);
+  }
 
 
 

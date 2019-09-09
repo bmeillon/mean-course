@@ -15,11 +15,12 @@ import { MatInputModule,
           MatPaginatorModule} from '@angular/material';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostsService } from './posts/post.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthService } from './auth/auth.service';
+import { AuthInterceptor } from './auth/auth-interceptor';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { AuthService } from './auth/auth.service';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [PostsService, AuthService],
+  providers: [PostsService, AuthService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,13 +6,7 @@ import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule,
-          MatCardModule,
-          MatButtonModule,
-          MatToolbarModule,
-          MatExpansionModule,
-          MatProgressSpinnerModule,
-          MatPaginatorModule} from '@angular/material';
+
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostsService } from './posts/post.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -21,6 +15,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthService } from './auth/auth.service';
 import { AuthInterceptor } from './auth/auth-interceptor';
+import { AngularMaterialModule } from './angular-material.module';
 
 
 @NgModule({
@@ -37,15 +32,9 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatExpansionModule,
-    MatProgressSpinnerModule,
-    MatPaginatorModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularMaterialModule
   ],
   providers: [PostsService, AuthService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

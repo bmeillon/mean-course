@@ -10,7 +10,7 @@ const app = express();
 
 mongoose.connect("mongodb+srv://bmeillon:ACSf6CTCaXRQD1n8@meancourse-wtp9c.mongodb.net/mean-bm?retryWrites=true&w=majority")
 .then(()=>{
-  console.log('Connectec to db!');
+  console.log('Connected to db!');
 })
 .catch(()=>{
   console.log('Connection Failed');
@@ -18,7 +18,7 @@ mongoose.connect("mongodb+srv://bmeillon:ACSf6CTCaXRQD1n8@meancourse-wtp9c.mongo
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-app.use("/images", express.static(path.join("../backend/images")));
+app.use("/images", express.static(path.join("./backend/images")));
 
 
 app.use((req, res, next) => {

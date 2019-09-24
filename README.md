@@ -1,3 +1,5 @@
+[![Build Status](https://bmeillon.visualstudio.com/MeanCourse/_apis/build/status/bmeillon.mean-course?branchName=master)](https://bmeillon.visualstudio.com/MeanCourse/_build/latest?definitionId=1&branchName=master)
+
 # MeanCourse
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
